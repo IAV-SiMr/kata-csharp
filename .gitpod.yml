@@ -1,5 +1,9 @@
 image: gitpod/workspace-dotnet
 
+tasks:
+  - init: cd KataUnitTest && dotnet restore && dotnet build --configuration Debug --no-restore
+    command: dotnet watch --project ./KataUnitTest test
+
 vscode:
   extensions:
     - muhammad-sammy.csharp
