@@ -1,7 +1,8 @@
 image: gitpod/workspace-dotnet
 
 tasks:
-  - init: cd KataUnitTest && dotnet restore && dotnet build --configuration Debug --no-restore
+  - before: cd KataUnitTest
+    init: dotnet restore && dotnet build --configuration Debug --no-restore
     command: dotnet watch --project . test
 
 vscode:
